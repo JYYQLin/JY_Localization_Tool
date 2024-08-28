@@ -5,16 +5,13 @@
 //  Created by JYYQLin on 2024/8/28.
 //
 
-import UIKit
+public let yq_localized_manager = JY_Localization_Tool.yq_shared
 
-
-let yq_localized_manager = JY_Localization_Tool.yq_shared
-
-class JY_Localization_Tool: NSObject {
+open class JY_Localization_Tool: NSObject {
     
     static let yq_shared = JY_Localization_Tool()
     
-    private(set) lazy var yq_current_language: JY_Enum_Language = .yq_chinese
+    open lazy var yq_current_language: JY_Enum_Language = .yq_chinese
     
     private override init() {
         super.init()
@@ -25,7 +22,7 @@ class JY_Localization_Tool: NSObject {
 }
 
 extension JY_Localization_Tool {
-    func yq_set(currentLanguage: JY_Enum_Language) {
+    open func yq_set(currentLanguage: JY_Enum_Language) {
         yq_current_language = currentLanguage
         
         UserDefaults.standard.set(currentLanguage.rawValue, forKey: "yq_current_language_rawValue")
@@ -33,7 +30,7 @@ extension JY_Localization_Tool {
 }
 
 extension JY_Localization_Tool {
-    static func yq_language_string(_ language: JY_Enum_Language) -> String {
+    public static func yq_language_string(_ language: JY_Enum_Language) -> String {
         
         if language == .yq_english {
             return "English"
