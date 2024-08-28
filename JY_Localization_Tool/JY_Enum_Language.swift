@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum JY_Enum_Language: String {
+public enum JY_Enum_Language: String {
     case yq_english = "en"
     case yq_english_Australia = "en-AU"
     case yq_english_UK = "en-GB"
