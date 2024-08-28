@@ -8,7 +8,7 @@
 import UIKit
 
 extension String {
-    func yq_localized(tableName: String, languageType: JY_Enum_Language? = nil) -> String {
+    public func yq_localized(tableName: String, languageType: JY_Enum_Language? = nil) -> String {
         
         let systemLanguage = languageType == nil ? yq_localized_manager.yq_current_language : languageType
                 
